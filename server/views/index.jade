@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 generAPI
+  div(ng-app="generAPI")
+    div {{test}}
+    input(ng-model="test")
+
+  script(src="/assets/components/jquery/dist/jquery.js")
+  script(src="/assets/components/angular/angular.js")
+  script(src="/assets/scripts/app.js")

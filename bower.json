@@ -1,0 +1,7 @@
+{
+  "name": "generAPI",
+  "dependencies": {
+    "angular": "~1.2.15",
+    "jquery": "~2.1.0"
+  }
+}
