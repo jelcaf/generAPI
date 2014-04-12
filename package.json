@@ -22,6 +22,7 @@
   },
   "scripts": {
     "start": "node server/app.js",
-    "postinstall": "./node_modules/.bin/bower prune && ./node_modules/.bin/bower install && ./node_modules/.bin/gulp"
+    "postinstall": "./node_modules/.bin/bower prune && ./node_modules/.bin/bower install && ./node_modules/.bin/gulp",
+    "test": "./node_modules/.bin/gulp test"
   }
 }
