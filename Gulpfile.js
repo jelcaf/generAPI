@@ -27,6 +27,7 @@ gulp.task("jshint", function () {
 });
 
 gulp.task("test-server", function () {
+  process.NODE_ENV = "test";
   gulp.src("server/test/**/*Test.js")
     .pipe(mocha());
 });

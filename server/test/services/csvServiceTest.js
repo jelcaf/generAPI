@@ -1,6 +1,8 @@
 var fs = require("fs");
 var expect = require("chai").expect;
 var csvService = require("../../services/csvService");
+var db = require("../../db");
+var ApiStructure = require("../../models/ApiStructure");
 
 var dataPath = __dirname + "/../data";
 
@@ -17,6 +19,34 @@ describe("csvService", function () {
       };
       testFileStructureEquals("guestStructure1.csv", expectedStructure, done);
     });
+  });
+
+  describe("import", function () {
+    before(db.connect);
+    after(db.close);
+
+    beforeEach(function (done) {
+      ApiStructure.remove(done);
+    });
+
+    it("should create an ApiStructure", function (done) {
+      var stream = fs.createReadStream(dataPath + "/import1.csv");
+      var structure = {
+        name: "test",
+        fields: [
+          {name: "c1", type: "string"},
+          {name: "c2", type: "string" }
+        ]
+      };
+
+      csvService.import(structure, stream, {}, function () {
+        //todo assertions
+        done();
+      });
+
+
+    });
+
   });
 
   function testFileStructureEquals (file, expectedStructure, cb) {
