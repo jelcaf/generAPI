@@ -18,16 +18,11 @@ csvService.guestStructure = function (csvStream, csvParseOptions, cb) {
 
     var structure = {};
     structure.fields = columns.map(function (column, index) {
-      var columnType = _.chain(column)
-        .map(typeFromValue)
-        .countBy()
-        .map(function (counter, type) {
-          return {type: type, counter: counter};
-        })
-        .max(function (obj) {
-          return obj.counter;
-        })
-        .value().type;
+      var types = column.map(typeFromValue);
+      var areAllNumbers = _.every(types , function (type) {
+        return type === "number";
+      });
+      var columnType = areAllNumbers ? "number" : "string";
       return {type: columnType, index: index};
     });
 
