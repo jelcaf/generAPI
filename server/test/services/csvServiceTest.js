@@ -1,6 +1,6 @@
 var fs = require("fs");
 var expect = require("chai").expect;
-var csvService = require("../../services/csvService");
+var csvService = require("../../services/csvservice");
 var db = require("../../db");
 var ApiStructure = require("../../models/ApiStructure");
 
