@@ -1,11 +1,15 @@
 extends layout
 
 block content
-  h1 generAPI
+  h1(class="title-index") generAPI
   div(ng-app="generAPI")
     div {{test}}
     input(ng-model="test")
 
   script(src="/assets/components/jquery/dist/jquery.js")
   script(src="/assets/components/angular/angular.js")
+  script(src="/assets/components/angular-bootstrap/ui-bootstrap-tpls.js")
+
   script(src="/assets/scripts/app.js")
+
+  link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Varela+Round')
