@@ -3,13 +3,16 @@ extends layout
 block content
   h1(class="title-index") generAPI
   div(ng-app="generAPI")
-    div {{test}}
-    input(ng-model="test")
+    div(id="input-file" ng-controller="UploadController")
+      input(type="file" file-select="onFileSelect($files)")
 
   script(src="/assets/components/jquery/dist/jquery.js")
   script(src="/assets/components/angular/angular.js")
   script(src="/assets/components/angular-bootstrap/ui-bootstrap-tpls.js")
+  script(src="/assets/scripts/upload-file/jquery.inputfile.js")
 
   script(src="/assets/scripts/app.js")
+  script(src="/assets/scripts/upload-file/upload.js")
 
   link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Varela+Round')
+  link(rel='stylesheet', href='/assets/style/jquery.inputfile.css')
