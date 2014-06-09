@@ -5,14 +5,18 @@ block content
   div(ng-app="generAPI")
     div(id="input-file" ng-controller="UploadController")
       input(type="file" file-select="onFileSelect($files)")
+      br
+      a(href="tableProposal")
+        button(id="continue-index" type="button" class="btn btn-success") 
+           span(class="glyphicon glyphicon-fire")
+           |   Generar API 
+           span(class="glyphicon glyphicon-chevron-right")
 
-  script(src="/assets/components/jquery/dist/jquery.js")
-  script(src="/assets/components/angular/angular.js")
-  script(src="/assets/components/angular-bootstrap/ui-bootstrap-tpls.js")
   script(src="/assets/scripts/upload-file/jquery.inputfile.js")
 
-  script(src="/assets/scripts/app.js")
   script(src="/assets/scripts/upload-file/upload.js")
+
+  script(src="/assets/scripts/index.js")
 
   link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Varela+Round')
   link(rel='stylesheet', href='/assets/style/jquery.inputfile.css')
